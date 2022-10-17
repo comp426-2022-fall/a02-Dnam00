@@ -15,7 +15,7 @@
   },
   "type": "module",
   "author": "Dnam00",
-  "license": "GPL-3.0",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/comp426-2022-fall/a02-Dnam00/issues"
   },
