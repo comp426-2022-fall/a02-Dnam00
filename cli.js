@@ -9,7 +9,7 @@ const args = minimist(process.argv.slice(2));
 //console.log(args)
 // help args
 if (args.h) {
-	try {
+	
 console.log(`Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
 
     -h            Show this help message and exit.
@@ -20,9 +20,6 @@ console.log(`Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME
     -j            Echo pretty JSON from open-meteo API and exit.
 `)	
 process.exit(0)
-	} catch (err){
-		process.exit(1);
-	}
 }
 
 
@@ -31,9 +28,9 @@ process.exit(0)
 //if (!args.t) {
 //	const timezone = moment.tz.guess();
 //}
-if (!args.z) {
- 	const timezone = moment.tz.guess();
-} 
+
+const timezone = moment.tz.guess();
+ 
 // need to get the data
 
 
@@ -89,20 +86,20 @@ if (args.j) {
 // number of days away. 
 const days = args.d 
 
-//if (days == 0) {
-//  console.log("today's precipitation hour is " + data.daily.precipitation_hours[0] + ".")
-//} else if (days > 1) {
-//  console.log("in " + days + " days, the precipitation hour is " + data.daily.precipitation_hours[days - 1] + ".")
-//} else {
-//  console.log("tomorrow precipitation hour is " + data.daily.precipitation_hours[1] + ".")
-//}
-
 if (days == 0) {
-	console.log("today.")
+  console.log("today's precipitation hour is " + data.daily.precipitation_hours[0] + ".")
 } else if (days > 1) {
-	console.log("in " + days + " days.")
+  console.log("in " + days + " days, the precipitation hour is " + data.daily.precipitation_hours[days - 1] + ".")
 } else {
-	console.log("tomorrow.")
+  console.log("tomorrow precipitation hour is " + data.daily.precipitation_hours[1] + ".")
 }
+
+//if (days == 0) {
+//	console.log("today.")
+//} else if (days > 1) {
+//	console.log("in " + days + " days.")
+//} else {
+//	console.log("tomorrow.")
+//}
 
 
