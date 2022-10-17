@@ -4,8 +4,6 @@ import minimist from 'minimist';
 import moment from 'moment-timezone';
 import fetch from 'node-fetch';
 
-//import fs from 'fs';
-
 const args = minimist(process.argv.slice(2));
 const nf = fetch;
 const mt = moment;
