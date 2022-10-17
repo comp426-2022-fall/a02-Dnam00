@@ -71,14 +71,14 @@ if (args.j) {
 	// make a request
   	//const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude' + latitude + '=&longitude=' + longitude + 'daily=weathercode,precipitation_hours&timezone=' + timezone + ');
 
-	const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=35.90&longitude=-79.05&daily=weathercode,precipitation_hours&timezone=America%2FNew_York');
+	const response2 = await fetch('https://api.open-meteo.com/v1/forecast?latitude=35.90&longitude=-79.05&daily=weathercode,precipitation_hours&timezone=America%2FNew_York');
  	
 
-	const data = await response.json();
+	const data2 = await response2.json();
 
 	//let dataString = JSON.stringify(data)
 	//fs.writeFileSync("./weather_forecast.json", dataString)
-	console.log(data);
+	console.log(data2);
 	process.exit(0)
 }
 
