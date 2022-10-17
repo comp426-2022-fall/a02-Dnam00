@@ -5,8 +5,6 @@ import moment from 'moment-timezone';
 import fetch from 'node-fetch';
 
 const args = minimist(process.argv.slice(2));
-const nf = fetch;
-const mt = moment;
 
 //console.log(args)
 // help args
@@ -45,7 +43,7 @@ process.exit(0)
 let latitude = 35.875
 
 if (args.n) {
-	latitude = args.n * -1
+	latitude = args.n
 }
 if (args.s) {
 	latitude = args.s * -1
@@ -56,15 +54,15 @@ if (args.w) {
 	longitude = args.w * -1
 }
 if (args.e) {
-	longitude = args.e * -1
+	longitude = args.e
 }
 
 
-  	const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&timezone=' + timezone + '');
+  	const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&timezone=' + timezone);
 
 
 	const data = await response.json();
-	console.log(data);			
+	//console.log(data);			
 
 if (args.j) {
 	//let latitude = '35.875'
@@ -90,7 +88,7 @@ const days = args.d
 
 if (days == 0) {
   console.log("today's precipitation hour is " + data.daily.precipitation_hours[0] + ".")
-} else if (days > 1 && days <= 7) {
+} else if (days > 1) {
   console.log("in " + days + " days, the precipitation hour is " + data.daily.precipitation_hours[days - 1] + ".")
 } else {
   console.log("tomorrow precipitation hour is " + data.daily.precipitation_hours[1] + ".")
