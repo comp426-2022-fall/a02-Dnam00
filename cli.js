@@ -86,11 +86,19 @@ if (args.j) {
 // number of days away. 
 const days = args.d 
 
+//if (days == 0) {
+//  console.log("today's precipitation hour is " + data.daily.precipitation_hours[0] + ".")
+//} else if (days > 1) {
+//  console.log("in " + days + " days, the precipitation hour is " + data.daily.precipitation_hours[days - 1] + ".")
+//} else {
+//  console.log("tomorrow precipitation hour is " + data.daily.precipitation_hours[1] + ".")
+//}
+
 if (days == 0) {
-  console.log("today's precipitation hour is " + data.daily.precipitation_hours[0] + ".")
+	console.log("today.")
 } else if (days > 1) {
-  console.log("in " + days + " days, the precipitation hour is " + data.daily.precipitation_hours[days - 1] + ".")
+	console.log("in " + days + " days.")
 } else {
-  console.log("tomorrow precipitation hour is " + data.daily.precipitation_hours[1] + ".")
+	console.log("tomorrow.")
 }
 
