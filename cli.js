@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import minimist from 'minimist';
-import moment from 'moment-timezone';
-import fetch from 'node-fetch';
+import minimist from "minimist";
+import moment from "moment-timezone";
+import fetch from "node-fetch";
 
 const args = minimist(process.argv.slice(2));
 
@@ -60,7 +60,7 @@ if (args.e) {
 }
 
 
-  	const weatherdata = 'https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&timezone=' + timezone;
+  	const weatherdata = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&daily=precipitation_hours&timezone=" + timezone;
 
 
 	const response = await fetch(weatherdata);
