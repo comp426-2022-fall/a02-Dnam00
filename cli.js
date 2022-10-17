@@ -4,7 +4,7 @@ import minimist from 'minimist';
 import moment from 'moment-timezone';
 import fetch from 'node-fetch';
 
-import fs from 'fs';
+//import fs from 'fs';
 
 const args = minimist(process.argv.slice(2));
 const nf = fetch;
@@ -62,7 +62,7 @@ if (args.e) {
 }
 
 
-  	const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&timezone=' + timezone);
+  	const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&timezone=' + timezone + '');
 
 
 	const data = await response.json();
