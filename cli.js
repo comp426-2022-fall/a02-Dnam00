@@ -64,7 +64,7 @@ if (args.e) {
 }
 
 
-  	const weatherdata = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&daily=precipitation_hours&timezone=" + timezone;
+  	let weatherdata = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&daily=precipitation_hours&timezone=" + timezone;
 
 
 	const response = await fetch(weatherdata);
@@ -120,5 +120,4 @@ if (days == 0) {
 //} else {
 //	console.log("tomorrow.")
 //}
-
 
