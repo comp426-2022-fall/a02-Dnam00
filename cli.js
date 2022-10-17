@@ -28,8 +28,12 @@ process.exit(0)
 //if (!args.t) {
 //	const timezone = moment.tz.guess();
 //}
-
-const timezone = moment.tz.guess();
+let timezone = moment.tz.guess();
+if (args.z) {
+	timezone = args.z 
+} else {
+timezone = moment.tz.guess();
+}
  
 // need to get the data
 
@@ -88,10 +92,25 @@ const days = args.d
 
 if (days == 0) {
   console.log("today's precipitation hour is " + data.daily.precipitation_hours[0] + ".")
+	if (data.daily.precipitation_hours[0] != 0) {
+		console.log("You might need your galoshes") 
+	} else {
+		console.log("You will not need your galoshes")
+	}	
 } else if (days > 1) {
   console.log("in " + days + " days, the precipitation hour is " + data.daily.precipitation_hours[days - 1] + ".")
+	if (data.daily.precipitation_hours[days-1] != 0) {
+		console.log("You might need your galoshes") 
+	} else {
+		console.log("You will not need your galoshes")
+	}
 } else {
   console.log("tomorrow precipitation hour is " + data.daily.precipitation_hours[1] + ".")
+	if (data.daily.precipitation_hours[1] != 0) {
+		console.log("You might need your galoshes")
+	} else {
+		console.log("You will not need your galoshes")
+	}
 }
 
 //if (days == 0) {
