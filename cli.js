@@ -46,7 +46,7 @@ timezone = moment.tz.guess();
 // creating latitude and longitude constant
 
 //let latitude = 70
-let latitude = 35.87
+let latitude = 35.80
 
 if (args.n) {
 	latitude = args.n
