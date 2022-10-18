@@ -51,16 +51,19 @@ let latitude = 35.80
 if (args.n) {
 	latitude = args.n
 }
-if (args.s) {
+else if (args.s) {
 	latitude = args.s * -1
+} else { console.log("Latitude must be in range")
 }
 let longitude = -79.00
 
 if (args.w) {
 	longitude = args.w * -1
 }
-if (args.e) {
+else if (args.e) {
 	longitude = args.e
+} else {
+	console.log("Longitude must be in range")
 }
 
 
